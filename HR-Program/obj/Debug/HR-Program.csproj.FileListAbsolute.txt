@@ -1,0 +1,12 @@
+c:\users\omer\documents\visual studio 2017\Projects\HR-Program\HR-Program\bin\Debug\HR-Program.exe.config
+c:\users\omer\documents\visual studio 2017\Projects\HR-Program\HR-Program\bin\Debug\HR-Program.exe
+c:\users\omer\documents\visual studio 2017\Projects\HR-Program\HR-Program\bin\Debug\HR-Program.pdb
+c:\users\omer\documents\visual studio 2017\Projects\HR-Program\HR-Program\obj\Debug\HR-Program.csprojResolveAssemblyReference.cache
+c:\users\omer\documents\visual studio 2017\Projects\HR-Program\HR-Program\obj\Debug\HR_Program.Form1.resources
+c:\users\omer\documents\visual studio 2017\Projects\HR-Program\HR-Program\obj\Debug\HR_Program.Properties.Resources.resources
+c:\users\omer\documents\visual studio 2017\Projects\HR-Program\HR-Program\obj\Debug\HR-Program.csproj.GenerateResource.Cache
+c:\users\omer\documents\visual studio 2017\Projects\HR-Program\HR-Program\obj\Debug\HR-Program.csproj.CoreCompileInputs.cache
+c:\users\omer\documents\visual studio 2017\Projects\HR-Program\HR-Program\obj\Debug\HR-Program.exe
+c:\users\omer\documents\visual studio 2017\Projects\HR-Program\HR-Program\obj\Debug\HR-Program.pdb
+C:\Users\Omer\Documents\Visual Studio 2017\Projects\HR-Program\HR-Program\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Omer\Documents\Visual Studio 2017\Projects\HR-Program\HR-Program\bin\Debug\Newtonsoft.Json.xml
