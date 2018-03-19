@@ -42,8 +42,9 @@ namespace HR_Program
                 }
             }
         }
+        public string summary { get; set; }
 
-        public Contact(string f_name, string l_name, DateTime birth, string tel, string cell, string addr,bool avail = true, string exp = "ללא", JObject adv = null)
+        public Contact(string f_name, string l_name, DateTime birth, string tel, string cell, string addr,bool avail = true, string exp = "ללא", string sum = "", JObject adv = null)
         {
             first_name = f_name;
             last_name = l_name;
@@ -54,6 +55,7 @@ namespace HR_Program
             advisors = adv;
             isAvailable = avail;
             Experiance = exp;
+            summary = sum;
 
             ID++;
             id = ID;

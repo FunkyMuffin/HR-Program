@@ -20,7 +20,9 @@ namespace HR_Program
             InitializeComponent();
             Contacts_lstbx.SelectedIndexChanged -= Contacts_lstbx_SelectedIndexChanged;
             Contacts_lstbx.DataSource = ml.getNames();
+            Contacts_lstbx.SelectedIndex = -1;
             Contacts_lstbx.SelectedIndexChanged += Contacts_lstbx_SelectedIndexChanged;
+            
 
             Experiance_cmbx.DataSource = template.Experiances;
         }
@@ -60,6 +62,7 @@ namespace HR_Program
             Cell_txtbx.Text = person.cellphone;
             Address_txtbx.Text = person.address;
             Experiance_cmbx.SelectedItem = person.experiance;
+            Summary_txtbx.Text = person.summary;
 
             if (person.isAvailable)
             {
