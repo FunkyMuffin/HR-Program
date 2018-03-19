@@ -36,7 +36,6 @@
             this.Filter_opt_cmbx = new System.Windows.Forms.ComboBox();
             this.Filter_btn = new System.Windows.Forms.Button();
             this.Filter_Values_tlp = new System.Windows.Forms.TableLayoutPanel();
-            this.Filter_Name_txtbx = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -66,9 +65,10 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.Summary_txtbx = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.Filter_tlp.SuspendLayout();
-            this.Filter_Values_tlp.SuspendLayout();
             this.Info_gb.SuspendLayout();
             this.Status_gb.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -169,21 +169,12 @@
             // 
             this.Filter_Values_tlp.ColumnCount = 1;
             this.Filter_Values_tlp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.Filter_Values_tlp.Controls.Add(this.Filter_Name_txtbx, 0, 0);
             this.Filter_Values_tlp.Location = new System.Drawing.Point(83, 29);
             this.Filter_Values_tlp.Name = "Filter_Values_tlp";
             this.Filter_Values_tlp.RowCount = 1;
             this.Filter_Values_tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.Filter_Values_tlp.Size = new System.Drawing.Size(74, 24);
             this.Filter_Values_tlp.TabIndex = 4;
-            // 
-            // Filter_Name_txtbx
-            // 
-            this.Filter_Name_txtbx.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Filter_Name_txtbx.Location = new System.Drawing.Point(3, 3);
-            this.Filter_Name_txtbx.Name = "Filter_Name_txtbx";
-            this.Filter_Name_txtbx.Size = new System.Drawing.Size(68, 20);
-            this.Filter_Name_txtbx.TabIndex = 1;
             // 
             // label3
             // 
@@ -200,7 +191,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label4.Location = new System.Drawing.Point(259, 155);
+            this.label4.Location = new System.Drawing.Point(259, 105);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label4.Size = new System.Drawing.Size(91, 16);
@@ -211,7 +202,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label5.Location = new System.Drawing.Point(278, 50);
+            this.label5.Location = new System.Drawing.Point(280, 50);
             this.label5.Name = "label5";
             this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label5.Size = new System.Drawing.Size(72, 13);
@@ -228,19 +219,18 @@
             // 
             // Address_txtbx
             // 
-            this.Address_txtbx.Location = new System.Drawing.Point(6, 174);
-            this.Address_txtbx.Multiline = true;
+            this.Address_txtbx.Location = new System.Drawing.Point(6, 125);
             this.Address_txtbx.Name = "Address_txtbx";
             this.Address_txtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Address_txtbx.Size = new System.Drawing.Size(341, 36);
+            this.Address_txtbx.Size = new System.Drawing.Size(341, 20);
             this.Address_txtbx.TabIndex = 5;
             // 
             // Tel_txtbx
             // 
-            this.Tel_txtbx.Location = new System.Drawing.Point(167, 74);
+            this.Tel_txtbx.Location = new System.Drawing.Point(200, 75);
             this.Tel_txtbx.Name = "Tel_txtbx";
             this.Tel_txtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Tel_txtbx.Size = new System.Drawing.Size(100, 20);
+            this.Tel_txtbx.Size = new System.Drawing.Size(75, 20);
             this.Tel_txtbx.TabIndex = 5;
             // 
             // Title_lbl
@@ -288,6 +278,8 @@
             // 
             // Info_gb
             // 
+            this.Info_gb.Controls.Add(this.Summary_txtbx);
+            this.Info_gb.Controls.Add(this.label9);
             this.Info_gb.Controls.Add(this.Address_txtbx);
             this.Info_gb.Controls.Add(this.label4);
             this.Info_gb.Controls.Add(this.label7);
@@ -311,31 +303,31 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label7.Location = new System.Drawing.Point(280, 111);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label7.Location = new System.Drawing.Point(130, 80);
             this.label7.Name = "label7";
             this.label7.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label7.Size = new System.Drawing.Size(70, 16);
+            this.label7.Size = new System.Drawing.Size(66, 13);
             this.label7.TabIndex = 4;
             this.label7.Text = "טלפון נייד:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.Location = new System.Drawing.Point(273, 78);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label1.Location = new System.Drawing.Point(280, 80);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(77, 16);
+            this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 4;
             this.label1.Text = "טלפון בבית:";
             // 
             // Cell_txtbx
             // 
-            this.Cell_txtbx.Location = new System.Drawing.Point(168, 107);
+            this.Cell_txtbx.Location = new System.Drawing.Point(55, 75);
             this.Cell_txtbx.Name = "Cell_txtbx";
             this.Cell_txtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Cell_txtbx.Size = new System.Drawing.Size(100, 20);
+            this.Cell_txtbx.Size = new System.Drawing.Size(75, 20);
             this.Cell_txtbx.TabIndex = 5;
             // 
             // Status_gb
@@ -447,7 +439,7 @@
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 153F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 365F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel3, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -489,6 +481,26 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(359, 277);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
+            // Summary_txtbx
+            // 
+            this.Summary_txtbx.Location = new System.Drawing.Point(6, 169);
+            this.Summary_txtbx.Multiline = true;
+            this.Summary_txtbx.Name = "Summary_txtbx";
+            this.Summary_txtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Summary_txtbx.Size = new System.Drawing.Size(341, 46);
+            this.Summary_txtbx.TabIndex = 9;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label9.Location = new System.Drawing.Point(300, 150);
+            this.label9.Name = "label9";
+            this.label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label9.Size = new System.Drawing.Size(46, 16);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "תקציר:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -500,12 +512,11 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
+            this.RightToLeftLayout = true;
             this.Text = "Form1";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.Filter_tlp.ResumeLayout(false);
             this.Filter_tlp.PerformLayout();
-            this.Filter_Values_tlp.ResumeLayout(false);
-            this.Filter_Values_tlp.PerformLayout();
             this.Info_gb.ResumeLayout(false);
             this.Info_gb.PerformLayout();
             this.Status_gb.ResumeLayout(false);
@@ -556,11 +567,12 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel Filter_tlp;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox Filter_Name_txtbx;
         private System.Windows.Forms.ComboBox Filter_opt_cmbx;
         private System.Windows.Forms.Button Filter_btn;
         private System.Windows.Forms.TableLayoutPanel Filter_Values_tlp;
         private System.Windows.Forms.ComboBox Experiance_cmbx;
+        private System.Windows.Forms.TextBox Summary_txtbx;
+        private System.Windows.Forms.Label label9;
     }
 }
 
