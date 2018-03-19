@@ -34,7 +34,7 @@ namespace HR_Program
                 "דגניה 15, תל אביב",
                 true,
                 null,
-                "אוהב לטייל בשבתות בדרום"
+                ""
                 ));
             dem_list.Add(new Contact(
                 "מיכל",
@@ -45,7 +45,7 @@ namespace HR_Program
                 "הרב כהנמן 50, בני ברק",
                 true,
                 null,
-                "לחוצת חתונה"
+                ""
                 ));
             dem_list.Add(new Contact(
                 "גלעד",
