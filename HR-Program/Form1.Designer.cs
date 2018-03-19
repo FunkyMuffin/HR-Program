@@ -36,7 +36,6 @@
             this.Filter_opt_cmbx = new System.Windows.Forms.ComboBox();
             this.Filter_btn = new System.Windows.Forms.Button();
             this.Filter_Values_tlp = new System.Windows.Forms.TableLayoutPanel();
-            this.Filter_Name_txtbx = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -68,7 +67,6 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.Filter_tlp.SuspendLayout();
-            this.Filter_Values_tlp.SuspendLayout();
             this.Info_gb.SuspendLayout();
             this.Status_gb.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -169,21 +167,12 @@
             // 
             this.Filter_Values_tlp.ColumnCount = 1;
             this.Filter_Values_tlp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.Filter_Values_tlp.Controls.Add(this.Filter_Name_txtbx, 0, 0);
             this.Filter_Values_tlp.Location = new System.Drawing.Point(83, 29);
             this.Filter_Values_tlp.Name = "Filter_Values_tlp";
             this.Filter_Values_tlp.RowCount = 1;
             this.Filter_Values_tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.Filter_Values_tlp.Size = new System.Drawing.Size(74, 24);
             this.Filter_Values_tlp.TabIndex = 4;
-            // 
-            // Filter_Name_txtbx
-            // 
-            this.Filter_Name_txtbx.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Filter_Name_txtbx.Location = new System.Drawing.Point(3, 3);
-            this.Filter_Name_txtbx.Name = "Filter_Name_txtbx";
-            this.Filter_Name_txtbx.Size = new System.Drawing.Size(68, 20);
-            this.Filter_Name_txtbx.TabIndex = 1;
             // 
             // label3
             // 
@@ -504,8 +493,6 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.Filter_tlp.ResumeLayout(false);
             this.Filter_tlp.PerformLayout();
-            this.Filter_Values_tlp.ResumeLayout(false);
-            this.Filter_Values_tlp.PerformLayout();
             this.Info_gb.ResumeLayout(false);
             this.Info_gb.PerformLayout();
             this.Status_gb.ResumeLayout(false);
@@ -556,7 +543,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel Filter_tlp;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox Filter_Name_txtbx;
         private System.Windows.Forms.ComboBox Filter_opt_cmbx;
         private System.Windows.Forms.Button Filter_btn;
         private System.Windows.Forms.TableLayoutPanel Filter_Values_tlp;

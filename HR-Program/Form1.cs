@@ -160,7 +160,8 @@ namespace HR_Program
             for (int i = 0; i < Filter_Values_tlp.ColumnCount; i++)
             {
                 Control c = Filter_Values_tlp.GetControlFromPosition(i, 0);
-                c.Dispose();
+                if (c != null)
+                    c.Dispose();
             }
             if (Filter_opt_cmbx.SelectedItem.ToString() == "גיל")
             {
