@@ -47,6 +47,8 @@
             this.Age_txtbx = new System.Windows.Forms.TextBox();
             this.Connections_gb = new System.Windows.Forms.GroupBox();
             this.Info_gb = new System.Windows.Forms.GroupBox();
+            this.Summary_txtbx = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Cell_txtbx = new System.Windows.Forms.TextBox();
@@ -65,8 +67,6 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.Summary_txtbx = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.Filter_tlp.SuspendLayout();
             this.Info_gb.SuspendLayout();
@@ -253,7 +253,7 @@
             this.BirthDate_dtpk.Name = "BirthDate_dtpk";
             this.BirthDate_dtpk.Size = new System.Drawing.Size(104, 20);
             this.BirthDate_dtpk.TabIndex = 7;
-            this.BirthDate_dtpk.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.BirthDate_dtpk.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
             // 
             // Age_txtbx
             // 
@@ -299,6 +299,26 @@
             this.Info_gb.TabIndex = 9;
             this.Info_gb.TabStop = false;
             this.Info_gb.Text = "פרטים אישיים";
+            // 
+            // Summary_txtbx
+            // 
+            this.Summary_txtbx.Location = new System.Drawing.Point(6, 169);
+            this.Summary_txtbx.Multiline = true;
+            this.Summary_txtbx.Name = "Summary_txtbx";
+            this.Summary_txtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Summary_txtbx.Size = new System.Drawing.Size(341, 46);
+            this.Summary_txtbx.TabIndex = 9;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label9.Location = new System.Drawing.Point(300, 150);
+            this.label9.Name = "label9";
+            this.label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label9.Size = new System.Drawing.Size(46, 16);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "תקציר:";
             // 
             // label7
             // 
@@ -480,26 +500,6 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.75451F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(359, 277);
             this.tableLayoutPanel3.TabIndex = 1;
-            // 
-            // Summary_txtbx
-            // 
-            this.Summary_txtbx.Location = new System.Drawing.Point(6, 169);
-            this.Summary_txtbx.Multiline = true;
-            this.Summary_txtbx.Name = "Summary_txtbx";
-            this.Summary_txtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Summary_txtbx.Size = new System.Drawing.Size(341, 46);
-            this.Summary_txtbx.TabIndex = 9;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label9.Location = new System.Drawing.Point(300, 150);
-            this.label9.Name = "label9";
-            this.label9.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label9.Size = new System.Drawing.Size(46, 16);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "תקציר:";
             // 
             // Form1
             // 

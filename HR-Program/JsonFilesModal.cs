@@ -12,19 +12,20 @@ namespace HR_Program
 {
     public partial class JsonFilesModal : Form
     {
-        public string[] file_names { get; set; }
-        public string selected_file { get; set; }
+        public string[] Files_names { get; set; }
+        public string Selected_file { get; set; }
 
-        public JsonFilesModal()
+        public JsonFilesModal( string[] files)
         {
             InitializeComponent();
 
-            Files_listbox.DataSource = file_names;
+            Files_listbox.DataSource = files;
         }
 
         private void Submit_btn_Click(object sender, EventArgs e)
         {
-            selected_file = Files_listbox.SelectedItem.ToString();
+            Selected_file = Files_listbox.SelectedItem.ToString();
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

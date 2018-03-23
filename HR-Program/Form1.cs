@@ -12,18 +12,29 @@ namespace HR_Program
 {
     public partial class Form1 : Form
     {
-        private MockList ml = new MockList();
+        private JsonParser jsonParser = new JsonParser();
+        private Filters filters;
+
         private Contact template = new Contact("","",DateTime.Now,"","", "");
 
         public Form1()
         {
             InitializeComponent();
-            Contacts_lstbx.SelectedIndexChanged -= Contacts_lstbx_SelectedIndexChanged;
-            Contacts_lstbx.DataSource = ml.getNames();
-            Contacts_lstbx.SelectedIndex = -1;
-            Contacts_lstbx.SelectedIndexChanged += Contacts_lstbx_SelectedIndexChanged;
-            
+            filters = new Filters(jsonParser);
 
+            try
+            {
+                List<string> kuk = jsonParser.getNames();
+
+                Contacts_lstbx.SelectedIndexChanged -= Contacts_lstbx_SelectedIndexChanged;
+                Contacts_lstbx.DataSource = kuk; 
+                Contacts_lstbx.SelectedIndex = -1;
+                Contacts_lstbx.SelectedIndexChanged += Contacts_lstbx_SelectedIndexChanged;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
             Experiance_cmbx.DataSource = template.Experiances;
         }
 
@@ -42,7 +53,7 @@ namespace HR_Program
 
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             Age_txtbx.Text = (DateTime.Now.Year - BirthDate_dtpk.Value.Year).ToString();
         }
@@ -52,38 +63,22 @@ namespace HR_Program
             string selection = Contacts_lstbx.SelectedValue.ToString();
 
             int id = int.Parse(selection.Split('.')[0]);
-            string f_name = selection.Split('.')[1].Split(' ')[1];
 
-            Contact person = ml.getContact(id, f_name);
+            Contact selected = jsonParser.GetContact(id);
 
-            Name_txtbx.Text = person.first_name + " " + person.last_name;
-            BirthDate_dtpk.Value = person.birth_date;
-            Tel_txtbx.Text = person.telephone;
-            Cell_txtbx.Text = person.cellphone;
-            Address_txtbx.Text = person.address;
-            Experiance_cmbx.SelectedItem = person.experiance;
-            Summary_txtbx.Text = person.summary;
-
-            if (person.isAvailable)
-            {
-                Avaiability_cmbx.SelectedIndex = 0;
-            }
-            else
-            {
-                Avaiability_cmbx.SelectedIndex = 1;
-            }
-
-            Title_lbl.Text = Name_txtbx.Text + ", " + Age_txtbx.Text;
+            populateInformation(selected);
         }
 
         private void Filter_btn_Click(object sender, EventArgs e)
         {
+            Contacts_lstbx.SelectedIndexChanged -= Contacts_lstbx_SelectedIndexChanged;
+
             if (Filter_opt_cmbx.SelectedItem.ToString() == "גיל")
             {
                 Control min_txtbx = Filter_tlp.Controls.Find("Filter_min_txtbx", true)[0];
                 Control max_txtbx = Filter_tlp.Controls.Find("Filter_max_txtbx",true)[0];
 
-                List<string> filtered_list = filterByAge(min_txtbx.Text, max_txtbx.Text);
+                List<string> filtered_list = filters.ByAge(min_txtbx.Text, max_txtbx.Text);
 
                 Contacts_lstbx.DataSource = filtered_list;
             }
@@ -91,7 +86,7 @@ namespace HR_Program
             {
                 Control name_txtbx = Filter_tlp.Controls.Find("Filter_name_txtbx", true)[0];
 
-                List<string> filtered_list = filterByName(name_txtbx.Text);
+                List<string> filtered_list = filters.ByName(name_txtbx.Text);
 
                 Contacts_lstbx.DataSource = filtered_list;
             }
@@ -99,63 +94,14 @@ namespace HR_Program
             {
                 ComboBox exp_cmb = (ComboBox)Filter_tlp.Controls.Find("Filter_exp_options_cmbx", true)[0];
 
-                List<string> filtered_list = filterByExperiance(exp_cmb.SelectedItem.ToString());
+                List<string> filtered_list = filters.ByExperiance(exp_cmb.SelectedItem.ToString());
 
                 Contacts_lstbx.DataSource = filtered_list;
-            }
-        }
-
-        private List<string> filterByAge(string min_num, string max_num)
-        {
-            if (min_num == "") { min_num = "0"; }
-
-            if (max_num == "") { max_num = "100"; }
-
-            int min = int.Parse(min_num);
-            int max = int.Parse(max_num);
-            List<string> new_list = new List<string>();
-
-            foreach (Contact person in ml.dem_list)
-            {
-                int age = person.getAge();
-                if ( age > min && age < max)
-                {
-                    new_list.Add(person.ToString());
-                }
+                
             }
 
-            return new_list;
-        }
-
-        private List<string> filterByName(string name)
-        {
-            List<string> new_list = new List<string>();
-
-            foreach (Contact person in ml.dem_list)
-            {
-                if (person.first_name.Contains(name) || person.last_name.Contains(name))
-                {
-                    new_list.Add(person.ToString());
-                }
-            }
-
-            return new_list;
-        }
-
-        private List<string> filterByExperiance(string exp)
-        {
-
-            List<string> new_list = new List<string>();
-
-            foreach (Contact person in ml.dem_list)
-            {
-                if (person.experiance == exp)
-                {
-                    new_list.Add(person.ToString());
-                }
-            }
-
-            return new_list;
+            Contacts_lstbx.SelectedIndex = -1;
+            Contacts_lstbx.SelectedIndexChanged += Contacts_lstbx_SelectedIndexChanged;
         }
 
         private void Filter_opt_cmbx_SelectedIndexChanged(object sender, EventArgs e)
@@ -214,6 +160,29 @@ namespace HR_Program
                 tlp.Controls.Add(t1, 0, 0);
             }
 
+        }
+
+        private void populateInformation(Contact contact)
+        {
+
+            Name_txtbx.Text = contact.First_name + " " + contact.Last_name;
+            BirthDate_dtpk.Value = contact.Birth_date;
+            Tel_txtbx.Text = contact.Telephone;
+            Cell_txtbx.Text = contact.Cellphone;
+            Address_txtbx.Text = contact.address;
+            Experiance_cmbx.SelectedItem = contact.Experiance;
+            Summary_txtbx.Text = contact.Summary;
+
+            if (contact.isAvailable)
+            {
+                Avaiability_cmbx.SelectedIndex = 0;
+            }
+            else
+            {
+                Avaiability_cmbx.SelectedIndex = 1;
+            }
+
+            Title_lbl.Text = Name_txtbx.Text + ", " + Age_txtbx.Text;
         }
     }
 }

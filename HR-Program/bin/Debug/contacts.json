@@ -124,6 +124,31 @@
           "number": "123123"
         }
       ]
+    },
+    {
+      "id": "0",
+      "forename": "kaki pipi",
+      "surname": "ליפשיץ",
+      "birth_date": "22/03/1991",
+      "cellphone": "050-11111",
+      "telephone": "077-36614",
+      "address": "ההסתדרות 13, תל אביב",
+      "ethnicity": "ספרד",
+      "availability": false,
+      "experience": "מנוסה",
+      "summary": "אח של גלעד",
+      "advisers": [
+        {
+          "name": "2",
+          "relation": "ב",
+          "number": "123123"
+        },
+        {
+          "name": "2",
+          "relation": "ב",
+          "number": "123123"
+        }
+      ]
     }
   ]
 }
