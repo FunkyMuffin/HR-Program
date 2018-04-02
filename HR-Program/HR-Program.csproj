@@ -48,7 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adviser.cs" />
     <Compile Include="Contact.cs" />
+    <Compile Include="ContactBook.cs" />
     <Compile Include="CustomUI.cs" />
     <Compile Include="Filters.cs" />
     <Compile Include="ContactsScreen.cs">

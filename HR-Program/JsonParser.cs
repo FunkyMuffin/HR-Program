@@ -7,12 +7,14 @@ using System.IO;
 using System.Windows.Forms;
 using System.Text;
 using System.Globalization;
+using System.Data;
 
 namespace HR_Program
 {
-    class JsonParser
+    class jsonParser
     {
         private string file_path;
+        private ContactBook Contacts;
 
         // 
         // Constructor - Looks for a '.json' file under CurrentDir.
@@ -21,22 +23,90 @@ namespace HR_Program
         //  more than 1 - show popup to select which file to use.
         //  no file     - show popup to select a file from dialogbox.
         //
-        public JsonParser()
+        public jsonParser()
         {
-            string[] files = Directory.GetFiles(Directory.GetCurrentDirectory()).Where( x => x.EndsWith(".json")).ToArray();
+            file_path = getFilePath();
+
+            FileStream fileStream = new FileStream(file_path, FileMode.Open);
+            Contacts= (ContactBook)DeserializeFromStream(fileStream);
+        }
+
+        public List<string> getNames()
+        {
+            List<string> names = new List<string>();
+            foreach (var contact in Contacts.contactbook)
+            {
+                names.Add(contact.ToString());
+            }
+            return names;
+        }
+
+        public List<string> getNames(string field, string value1, string value2 = null)
+        {
+            List<string> name_list = new List<string>();
+            List<Contact> filtered_list = new List<Contact>();
+
+            if (field == "name")
+            {
+                filtered_list = Contacts.contactbook.Where(x => x.first_name.Contains(value1) || x.last_name.Contains(value1)).ToList();
+            }
+            else if (field == "age")
+            {
+                DateTime min_date = DateTime.Now.AddYears(int.Parse(value1) * -1); // Will be higher than birth_date
+                DateTime max_date = DateTime.Now.AddYears(int.Parse(value2) * -1); // Will be lower than birth
+
+                filtered_list = Contacts.contactbook.Where(x => x.birth_date < min_date && x.birth_date > max_date).ToList();
+            }
+            else if (field == "experience")
+            {
+                filtered_list = Contacts.contactbook.Where(x => x.experience == value1).ToList();
+            }
+            else
+            {
+                return this.getNames();
+            }
+            foreach (var contact in filtered_list)
+            {
+                name_list.Add(contact.ToString());
+            }
+            
+            return name_list;
+            
+        }
+
+        public Contact GetContact(int id)
+        {
+            return Contacts.contactbook.Where(x => x.id == id).First();
+
+        }
+
+        public void AddContact(Contact contact)
+        {
+            
+        }
+
+
+        // SUPPORT METHODS //
+        private string getFilePath()
+        {
+            string[] files = Directory.GetFiles(Directory.GetCurrentDirectory()).Where(x => x.EndsWith(".json")).ToArray();
             if (files.Count() > 1)
             {
                 using (JsonFilesModal modal = new JsonFilesModal(files))
                 {
                     if (modal.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
-                        file_path = modal.Selected_file;
+                        return modal.Selected_file;
+                    }
+                    else
+                    {
+                        throw new Exception("JsonFile Modal didn't return 'DialogResult.OK'");
                     }
                 }
             }
             else if (files.Count() == 1)
             {
-                file_path = files[0];
+                return files[0];
             }
             else
             {
@@ -47,157 +117,28 @@ namespace HR_Program
 
                     if (ofd.ShowDialog() == DialogResult.OK)
                     {
-                        file_path = ofd.FileName;
+                        return ofd.FileName;
 
                     }
                     else
                     {
                         MessageBox.Show("לא נבחר קובץ ארכיון!");
+                        throw new Exception("No file chosen");
                     }
                 }
-                
+
             }
         }
 
-
-        //
-        // GetNames - returns list of names from file_path variable.
-        //
-        public List<string> GetNames()
+        private object DeserializeFromStream(Stream stream)
         {
-            JObject json = (JObject)JsonConvert.DeserializeObject(File.ReadAllText(file_path, Encoding.UTF8));
+            var serializer = new JsonSerializer();
 
-            List <string> name_list = new List<string>();
-
-            int id;
-            string first_name,last_name;
-            
-            foreach (JToken person in json["ContactBook"].Children())
+            using (var sr = new StreamReader(stream))
+            using (JsonTextReader jsonTextReader = new JsonTextReader(sr))
             {
-                try
-                {
-                    id = int.Parse(person["id"].ToString());
-                    first_name = person["forename"].ToString();
-                    last_name = person["surname"].ToString();
-
-                    name_list.Add(id + ". " + first_name + " " + last_name);
-                }
-                catch
-                {
-                    throw new Exception("שגיאה בטעינת שמות!" + Environment.NewLine + "שדות: id, forename, surname");
-                }
+                return serializer.Deserialize<ContactBook>(jsonTextReader);
             }
-
-            Contact.ID = int.Parse(name_list[name_list.Count() - 1].Split('.')[0]);
-            return name_list;
-        }
-
-        //
-        //  GetNames - returns list of names from file_path variable.
-        //  Args:
-        //      field   - Name of the filtering field [name | age | experiance ].
-        //      value1  - First value.
-        //      value2  - Second value, optional.
-        //
-        public List<string> getNames(string field, string value1, string value2 = null)
-        {
-            List<string> name_list = new List<string>();
-
-            JObject full_json = (JObject)JsonConvert.DeserializeObject(File.ReadAllText(file_path, Encoding.UTF8));
-            IEnumerable<JToken> raw_json;
-
-            if (field == "name")
-            {
-                raw_json = (from a in full_json["ContactBook"]
-                                where a["forename"].ToString().Contains(value1) || a["surname"].ToString().Contains(value1)
-                                select a).ToList();
-            }
-            else if (field == "age")
-            {
-                DateTime min_date = DateTime.Now.AddYears(int.Parse(value1) * -1); // Will be higher than birth 
-                DateTime max_date = DateTime.Now.AddYears(int.Parse(value2) * -1); // Will be lower than birth
-                
-
-                raw_json = (from a in full_json["ContactBook"]
-                                where DateTime.Parse(a["birth_date"].ToString()) > max_date && DateTime.Parse(a["birth_date"].ToString()) < min_date
-                            select a).ToList();
-            }
-            else if (field == "experience")
-            {
-                raw_json = (from a in full_json["ContactBook"]
-                            where a["experience"].ToString().Equals(value1)
-                            select a).ToList();
-            }
-            else
-            {
-                raw_json = (from a in full_json["ContactBook"]
-                            select a).ToList();
-            }
-            full_json = null;
-            
-            JArray contacts = new JArray(raw_json);
-            raw_json = null;
-
-            int id;
-            string first_name, last_name;
-
-            foreach (JToken contact in contacts.Children())
-            {
-                try
-                {
-                    id = int.Parse(contact["id"].ToString());
-                    first_name = contact["forename"].ToString();
-                    last_name = contact["surname"].ToString();
-
-                    name_list.Add(id + ". " + first_name + " " + last_name);
-                }
-                catch
-                {
-                    throw new Exception("שגיאה בטעינת שמות!" + Environment.NewLine + "שדות: id, forename, surname");
-                }
-            }
-
-            return name_list;
-        }
-
-
-        //
-        //  GeContact - returns Contact object by id
-        //  Args:
-        //      id - ID if selected person
-        //
-        public Contact GetContact(int id)
-        {
-            JObject full_json = (JObject)JsonConvert.DeserializeObject(File.ReadAllText(file_path, Encoding.UTF8));
-
-            var queried_json = (from a in full_json["ContactBook"]
-                             where a["id"].ToString().Equals(id.ToString())
-                             select a).ToList();
-
-            JObject person = JObject.Parse(queried_json[0].ToString());
-
-            Contact contact = new Contact
-            {
-                id = int.Parse(person["id"].ToString()),
-                First_name = person["forename"].ToString(),
-                Last_name = person["surname"].ToString(),
-                Birth_date = DateTime.Parse(person["birth_date"].ToString()),
-                Telephone = person["telephone"].ToString(),
-                Cellphone = person["cellphone"].ToString(),
-                address = person["address"].ToString(),
-                Advisers = (JArray)person["advisers"],
-                isAvailable = bool.Parse(person["availability"].ToString()),
-                Experiance = person["experience"].ToString(),
-                Summary = person["summary"].ToString()
-
-            };
-
-            return contact;
-        }
-
-        public void AddContact(Contact contact)
-        {
-            
         }
     }
 }

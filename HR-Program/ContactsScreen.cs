@@ -12,10 +12,8 @@ namespace HR_Program
 {
     public partial class ContactsScreen : Form
     {
-        private JsonParser jsonParser = new JsonParser();
+        private jsonParser jsonParser = new jsonParser();
         private Filters filters;
-
-        private Contact template = new Contact("","",DateTime.Now,"","", "");
 
         public ContactsScreen()
         {
@@ -24,10 +22,8 @@ namespace HR_Program
 
             try
             {
-                List<string> kuk = jsonParser.GetNames();
-
                 Contacts_lstbx.SelectedIndexChanged -= Contacts_lstbx_SelectedIndexChanged;
-                Contacts_lstbx.DataSource = kuk; 
+                Contacts_lstbx.DataSource = jsonParser.getNames(); 
                 Contacts_lstbx.SelectedIndex = -1;
                 Contacts_lstbx.SelectedIndexChanged += Contacts_lstbx_SelectedIndexChanged;
             }
@@ -35,7 +31,7 @@ namespace HR_Program
             {
                 MessageBox.Show(e.Message);
             }
-            Experiance_cmbx.DataSource = Contact.Experiances;
+            experience_cmbx.DataSource = Contact.experiences;
 
             CustomUI.CustomComboBox(Filter_multichoice_cmbx);
         }
@@ -60,15 +56,15 @@ namespace HR_Program
         private void populateInformation(Contact contact)
         {
 
-            Name_txtbx.Text = contact.First_name + " " + contact.Last_name;
-            BirthDate_dtpk.Value = contact.Birth_date;
-            Tel_txtbx.Text = contact.Telephone;
-            Cell_txtbx.Text = contact.Cellphone;
+            Name_txtbx.Text = contact.first_name + " " + contact.last_name;
+            BirthDate_dtpk.Value = contact.birth_date;
+            Tel_txtbx.Text = contact.telephone;
+            Cell_txtbx.Text = contact.cellphone;
             Address_txtbx.Text = contact.address;
-            Experiance_cmbx.SelectedItem = contact.Experiance;
-            Summary_txtbx.Text = contact.Summary;
+            experience_cmbx.SelectedItem = contact.experience;
+            summary_txtbx.Text = contact.summary;
 
-            if (contact.isAvailable)
+            if (contact.availability)
             {
                 Avaiability_cmbx.SelectedIndex = 0;
             }
@@ -108,15 +104,15 @@ namespace HR_Program
             Contact contact = new Contact()
             {
 
-                First_name = f_name,
-                Last_name = l_name,
-                Birth_date = BirthDate_dtpk.Value,
-                Telephone = Tel_txtbx.Text,
-                Cellphone = Cell_txtbx.Text,
+                first_name = f_name,
+                last_name = l_name,
+                birth_date = BirthDate_dtpk.Value,
+                telephone = Tel_txtbx.Text,
+                cellphone = Cell_txtbx.Text,
                 address = Address_txtbx.Text,
-                isAvailable = Avaiability_cmbx.SelectedIndex == 0 ? true : false,
-                Experiance = Experiance_cmbx.SelectedItem.ToString(),
-                Summary = Summary_txtbx.Text
+                availability = Avaiability_cmbx.SelectedIndex == 0 ? true : false,
+                experience = experience_cmbx.SelectedItem.ToString(),
+                summary = summary_txtbx.Text
             };
 
             jsonParser.AddContact(contact);
@@ -163,7 +159,7 @@ namespace HR_Program
             {
                 Filter_string_txtbx.Visible = false;
                 Filter_multichoice_cmbx.Visible = true;
-                Filter_multichoice_cmbx.DataSource = Contact.Experiances;
+                Filter_multichoice_cmbx.DataSource = Contact.experiences;
             }
             else
             {
@@ -196,7 +192,7 @@ namespace HR_Program
             }
             else if (selection == "ניסיון")
             {
-                Contacts_lstbx.DataSource = filters.ByExperiance(Filter_multichoice_cmbx.SelectedItem.ToString());
+                Contacts_lstbx.DataSource = filters.Byexperience(Filter_multichoice_cmbx.SelectedItem.ToString());
             }
 
             Contacts_lstbx.SelectedIndex = -1;
