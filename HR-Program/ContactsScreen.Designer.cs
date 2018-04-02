@@ -40,13 +40,13 @@
             this.Age_txtbx = new System.Windows.Forms.TextBox();
             this.Connections_gb = new System.Windows.Forms.GroupBox();
             this.Info_gb = new System.Windows.Forms.GroupBox();
-            this.Summary_txtbx = new System.Windows.Forms.TextBox();
+            this.summary_txtbx = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Cell_txtbx = new System.Windows.Forms.TextBox();
             this.Status_gb = new System.Windows.Forms.GroupBox();
-            this.Experiance_cmbx = new System.Windows.Forms.ComboBox();
+            this.experience_cmbx = new System.Windows.Forms.ComboBox();
             this.Avaiability_cmbx = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -190,7 +190,7 @@
             // 
             // Info_gb
             // 
-            this.Info_gb.Controls.Add(this.Summary_txtbx);
+            this.Info_gb.Controls.Add(this.summary_txtbx);
             this.Info_gb.Controls.Add(this.label9);
             this.Info_gb.Controls.Add(this.Address_txtbx);
             this.Info_gb.Controls.Add(this.label4);
@@ -212,14 +212,14 @@
             this.Info_gb.TabStop = false;
             this.Info_gb.Text = "פרטים אישיים";
             // 
-            // Summary_txtbx
+            // summary_txtbx
             // 
-            this.Summary_txtbx.Location = new System.Drawing.Point(6, 169);
-            this.Summary_txtbx.Multiline = true;
-            this.Summary_txtbx.Name = "Summary_txtbx";
-            this.Summary_txtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Summary_txtbx.Size = new System.Drawing.Size(341, 46);
-            this.Summary_txtbx.TabIndex = 9;
+            this.summary_txtbx.Location = new System.Drawing.Point(6, 169);
+            this.summary_txtbx.Multiline = true;
+            this.summary_txtbx.Name = "summary_txtbx";
+            this.summary_txtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.summary_txtbx.Size = new System.Drawing.Size(341, 46);
+            this.summary_txtbx.TabIndex = 9;
             // 
             // label9
             // 
@@ -264,7 +264,7 @@
             // 
             // Status_gb
             // 
-            this.Status_gb.Controls.Add(this.Experiance_cmbx);
+            this.Status_gb.Controls.Add(this.experience_cmbx);
             this.Status_gb.Controls.Add(this.Avaiability_cmbx);
             this.Status_gb.Controls.Add(this.label6);
             this.Status_gb.Controls.Add(this.label2);
@@ -276,13 +276,13 @@
             this.Status_gb.TabStop = false;
             this.Status_gb.Text = "סטטוס";
             // 
-            // Experiance_cmbx
+            // experience_cmbx
             // 
-            this.Experiance_cmbx.FormattingEnabled = true;
-            this.Experiance_cmbx.Location = new System.Drawing.Point(10, 22);
-            this.Experiance_cmbx.Name = "Experiance_cmbx";
-            this.Experiance_cmbx.Size = new System.Drawing.Size(72, 21);
-            this.Experiance_cmbx.TabIndex = 3;
+            this.experience_cmbx.FormattingEnabled = true;
+            this.experience_cmbx.Location = new System.Drawing.Point(10, 22);
+            this.experience_cmbx.Name = "experience_cmbx";
+            this.experience_cmbx.Size = new System.Drawing.Size(72, 21);
+            this.experience_cmbx.TabIndex = 3;
             // 
             // Avaiability_cmbx
             // 
@@ -556,8 +556,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox Cell_txtbx;
-        private System.Windows.Forms.ComboBox Experiance_cmbx;
-        private System.Windows.Forms.TextBox Summary_txtbx;
+        private System.Windows.Forms.ComboBox experience_cmbx;
+        private System.Windows.Forms.TextBox summary_txtbx;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox Top_bar_pctb;
         private System.Windows.Forms.Button Exit_btn;

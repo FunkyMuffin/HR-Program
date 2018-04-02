@@ -12,3 +12,4 @@ C:\Users\Omer\Documents\Visual Studio 2017\Projects\HR-Program\HR-Program\bin\De
 C:\Users\Omer\Documents\Visual Studio 2017\Projects\HR-Program\HR-Program\obj\Debug\HR_Program.JsonFilesModal.resources
 C:\Users\Omer\Documents\Visual Studio 2017\Projects\HR-Program\HR-Program\obj\Debug\HR_Program.HubScreen.resources
 C:\Users\Omer\Documents\Visual Studio 2017\Projects\HR-Program\HR-Program\obj\Debug\HR_Program.ContactsScreen.resources
+C:\Users\Omer\Documents\Visual Studio 2017\Projects\HR-Program\HR-Program\obj\Debug\HR_Program.SchedulesScreen.resources

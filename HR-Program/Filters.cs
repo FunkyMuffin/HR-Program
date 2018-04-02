@@ -8,11 +8,11 @@ namespace HR_Program
 {
     class Filters
     {
-        JsonParser jsonParser;
+        jsonParserAllToMemAllToMem jsonParserAllToMem;
 
-        public Filters(JsonParser parser)
+        public Filters(jsonParserAllToMemAllToMem parser)
         {
-            jsonParser = parser;
+            jsonParserAllToMem = parser;
         }
 
 
@@ -22,17 +22,17 @@ namespace HR_Program
 
             if (max_num == "") { max_num = "100"; }
 
-            return jsonParser.getNames("age", min_num, max_num);
+            return jsonParserAllToMem.getNames("age", min_num, max_num);
         }
 
         public List<string> ByName(string name)
         {
-            return jsonParser.getNames("name", name);
+            return jsonParserAllToMem.getNames("name", name);
         }
 
-        public List<string> ByExperiance(string exp)
+        public List<string> Byexperience(string exp)
         {
-            return jsonParser.getNames("experience", exp);
+            return jsonParserAllToMem.getNames("experience", exp);
         }
 
     }
