@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,27 +49,57 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contact.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="CustomUI.cs" />
+    <Compile Include="Filters.cs" />
+    <Compile Include="ContactsScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ContactsScreen.Designer.cs">
+      <DependentUpon>ContactsScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="MockList.cs" />
+    <Compile Include="HubScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HubScreen.Designer.cs">
+      <DependentUpon>HubScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JsonFilesModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JsonFilesModal.Designer.cs">
+      <DependentUpon>JsonFilesModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JsonParser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SchedulesScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SchedulesScreen.Designer.cs">
+      <DependentUpon>SchedulesScreen.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ContactsScreen.resx">
+      <DependentUpon>ContactsScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HubScreen.resx">
+      <DependentUpon>HubScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JsonFilesModal.resx">
+      <DependentUpon>JsonFilesModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SchedulesScreen.resx">
+      <DependentUpon>SchedulesScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -83,6 +113,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mag1_x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mag1_click_x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mag1_over_x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_add_x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_remove_x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_update_x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_add_click_x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_add_over_x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_remove_click_x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_remove_over_x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_update_click_x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_update_over_x48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

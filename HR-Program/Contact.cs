@@ -9,20 +9,20 @@ namespace HR_Program
 {
     class Contact
     {
-        private static int ID = 0;
-        public string[] Experiances = new[] { "ללא", "מתחיל", "מנוסה" };
+        public static int ID { get; set; }
+        public static string[] Experiances = new[] { "ללא", "מתחיל", "מנוסה" };
 
 
-        public int id { get; }
-        public string first_name { get; set; }
-        public string last_name { get; set; }
-        public DateTime birth_date { get; set; }
-        public string telephone { get; set; }
-        public string cellphone { get; set; }
+        public int id { get; set; }
+        public string First_name { get; set; }
+        public string Last_name { get; set; }
+        public DateTime Birth_date { get; set; }
+        public string Telephone { get; set; }
+        public string Cellphone { get; set; }
         public string address { get; set; }
-        public JObject advisors { get; set; }
+        public JArray Advisers { get; set; }
         public bool isAvailable = true;
-        public string experiance;
+        private string experiance;
         public string Experiance
         {
             get
@@ -42,20 +42,28 @@ namespace HR_Program
                 }
             }
         }
-        public string summary { get; set; }
+        public string Summary { get; set; }
 
-        public Contact(string f_name, string l_name, DateTime birth, string tel, string cell, string addr,bool avail = true, string exp = "ללא", string sum = "", JObject adv = null)
+        public Contact()
         {
-            first_name = f_name;
-            last_name = l_name;
-            birth_date = birth;
-            telephone = tel;
-            cellphone = cell;
+            ID++;
+
+            if (id == 0)
+               id = ID;
+        }
+
+        public Contact(string f_name, string l_name, DateTime birth, string tel, string cell, string addr,bool avail = true, string exp = "ללא", string sum = "", JArray adv = null)
+        {
+            First_name = f_name;
+            Last_name = l_name;
+            Birth_date = birth;
+            Telephone = tel;
+            Cellphone = cell;
             address = addr;
-            advisors = adv;
+            Advisers = adv;
             isAvailable = avail;
             Experiance = exp;
-            summary = sum;
+            Summary = sum;
 
             ID++;
             id = ID;
@@ -63,12 +71,12 @@ namespace HR_Program
 
         public int getAge()
         {
-            return DateTime.Now.Year - birth_date.Year;
+            return DateTime.Now.Year - Birth_date.Year;
         }
 
         public override string ToString()
         {
-            return id + ". " + first_name + " " + last_name;
+            return id + ". " + First_name + " " + Last_name;
         }
     }
 }
