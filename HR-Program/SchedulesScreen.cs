@@ -16,5 +16,16 @@ namespace HR_Program
         {
             InitializeComponent();
         }
+
+        private void Top_bar_pctb_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                CustomUI.ReleaseCapture();
+                CustomUI.SendMessage(Handle);
+            }
+        }
+
+        private void Exit_btn_Click(object sender, EventArgs e) => Close();
     }
 }

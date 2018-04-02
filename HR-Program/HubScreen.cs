@@ -14,15 +14,6 @@ namespace HR_Program
 {
     public partial class HubScreen : Form
     {
-        public const int WM_NCLBUTTONDOWN = 0xA1;
-        public const int HT_CAPTION = 0x2;
-
-        [DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wPatam, int lParam);
-
-        [DllImport("user32.dll")]
-        public static extern bool ReleaseCapture();
-
         public HubScreen()
         {
             InitializeComponent();
@@ -35,8 +26,8 @@ namespace HR_Program
         {
             if (e.Button == MouseButtons.Left)
             {
-                ReleaseCapture();
-                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+                CustomUI.ReleaseCapture();
+                CustomUI.SendMessage(Handle);
             }
         }
 
@@ -45,6 +36,18 @@ namespace HR_Program
             if (!IsOpen("ContactsScreen"))
             {
                 new Thread(() => new ContactsScreen().ShowDialog()).Start();
+            }
+            else
+            {
+                MessageBox.Show("There is already an instance of the contact list");
+            }
+        }
+
+        private void Calander_form_btn_Click(object sender, EventArgs e)
+        {
+            if (!IsOpen("SchedulesScreen"))
+            {
+                new Thread(() => new SchedulesScreen().ShowDialog()).Start();
             }
             else
             {
@@ -65,18 +68,6 @@ namespace HR_Program
             }
 
             return false;
-        }
-
-        private void Calander_form_btn_Click(object sender, EventArgs e)
-        {
-            if (!IsOpen("SchedulesScreen"))
-            {
-                new Thread(() => new SchedulesScreen().ShowDialog()).Start();
-            }
-            else
-            {
-                MessageBox.Show("There is already an instance of the contact list");
-            }
         }
     }
 }

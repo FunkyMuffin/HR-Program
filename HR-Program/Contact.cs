@@ -10,7 +10,7 @@ namespace HR_Program
     class Contact
     {
         public static int ID { get; set; }
-        public string[] Experiances = new[] { "ללא", "מתחיל", "מנוסה" };
+        public static string[] Experiances = new[] { "ללא", "מתחיל", "מנוסה" };
 
 
         public int id { get; set; }

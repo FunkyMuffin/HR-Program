@@ -30,19 +30,12 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.Contacts_lstbx = new System.Windows.Forms.ListBox();
-            this.Contact_list_tlp = new System.Windows.Forms.TableLayoutPanel();
-            this.Filter_tlp = new System.Windows.Forms.TableLayoutPanel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.Filter_opt_cmbx = new System.Windows.Forms.ComboBox();
-            this.Filter_btn = new System.Windows.Forms.Button();
-            this.Filter_Values_tlp = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Name_txtbx = new System.Windows.Forms.TextBox();
             this.Address_txtbx = new System.Windows.Forms.TextBox();
             this.Tel_txtbx = new System.Windows.Forms.TextBox();
-            this.Title_lbl = new System.Windows.Forms.Label();
             this.BirthDate_dtpk = new System.Windows.Forms.DateTimePicker();
             this.Age_txtbx = new System.Windows.Forms.TextBox();
             this.Connections_gb = new System.Windows.Forms.GroupBox();
@@ -57,124 +50,53 @@
             this.Avaiability_cmbx = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.קובץToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.שמירהToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.אישקשרToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddContactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.DeleteCurrToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.UpdateCurrToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.Information_tlp = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.Contact_list_tlp.SuspendLayout();
-            this.Filter_tlp.SuspendLayout();
+            this.Exit_btn = new System.Windows.Forms.Button();
+            this.Side_panel = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.Filter_multichoice_cmbx = new System.Windows.Forms.ComboBox();
+            this.Filter_string_txtbx = new System.Windows.Forms.TextBox();
+            this.Filter_search_btn = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.Filtering_cmbx = new System.Windows.Forms.ComboBox();
+            this.Main_panel = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.Person_remove_pbtn = new System.Windows.Forms.PictureBox();
+            this.Person_update_pbtn = new System.Windows.Forms.PictureBox();
+            this.Person_add_pbtn = new System.Windows.Forms.PictureBox();
+            this.Top_bar_pctb = new System.Windows.Forms.PictureBox();
             this.Info_gb.SuspendLayout();
             this.Status_gb.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            this.Information_tlp.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
+            this.Side_panel.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Filter_search_btn)).BeginInit();
+            this.Main_panel.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Person_remove_pbtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Person_update_pbtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Person_add_pbtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Top_bar_pctb)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(6, 3);
+            this.panel1.Location = new System.Drawing.Point(12, 36);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(138, 177);
             this.panel1.TabIndex = 0;
             // 
             // Contacts_lstbx
             // 
+            this.Contacts_lstbx.BackColor = System.Drawing.SystemColors.Window;
+            this.Contacts_lstbx.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Contacts_lstbx.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Contacts_lstbx.FormattingEnabled = true;
-            this.Contacts_lstbx.Location = new System.Drawing.Point(3, 65);
+            this.Contacts_lstbx.Location = new System.Drawing.Point(0, 71);
             this.Contacts_lstbx.Name = "Contacts_lstbx";
             this.Contacts_lstbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Contacts_lstbx.Size = new System.Drawing.Size(160, 304);
+            this.Contacts_lstbx.Size = new System.Drawing.Size(180, 349);
             this.Contacts_lstbx.TabIndex = 1;
             this.Contacts_lstbx.SelectedIndexChanged += new System.EventHandler(this.Contacts_lstbx_SelectedIndexChanged);
-            // 
-            // Contact_list_tlp
-            // 
-            this.Contact_list_tlp.ColumnCount = 1;
-            this.Contact_list_tlp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.Contact_list_tlp.Controls.Add(this.Contacts_lstbx, 0, 1);
-            this.Contact_list_tlp.Controls.Add(this.Filter_tlp, 0, 0);
-            this.Contact_list_tlp.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Contact_list_tlp.Location = new System.Drawing.Point(0, 24);
-            this.Contact_list_tlp.Name = "Contact_list_tlp";
-            this.Contact_list_tlp.RowCount = 2;
-            this.Contact_list_tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.Contact_list_tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.33334F));
-            this.Contact_list_tlp.Size = new System.Drawing.Size(166, 372);
-            this.Contact_list_tlp.TabIndex = 2;
-            // 
-            // Filter_tlp
-            // 
-            this.Filter_tlp.ColumnCount = 2;
-            this.Filter_tlp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.Filter_tlp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.Filter_tlp.Controls.Add(this.label8, 0, 0);
-            this.Filter_tlp.Controls.Add(this.Filter_opt_cmbx, 1, 0);
-            this.Filter_tlp.Controls.Add(this.Filter_btn, 1, 1);
-            this.Filter_tlp.Controls.Add(this.Filter_Values_tlp, 0, 1);
-            this.Filter_tlp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Filter_tlp.Location = new System.Drawing.Point(3, 3);
-            this.Filter_tlp.Name = "Filter_tlp";
-            this.Filter_tlp.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Filter_tlp.RowCount = 2;
-            this.Filter_tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.27273F));
-            this.Filter_tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.72727F));
-            this.Filter_tlp.Size = new System.Drawing.Size(160, 56);
-            this.Filter_tlp.TabIndex = 2;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(96, 6);
-            this.label8.Name = "label8";
-            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label8.Size = new System.Drawing.Size(49, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "סנן לפי:";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // Filter_opt_cmbx
-            // 
-            this.Filter_opt_cmbx.FormattingEnabled = true;
-            this.Filter_opt_cmbx.Items.AddRange(new object[] {
-            "ניסיון",
-            "גיל",
-            "שם"});
-            this.Filter_opt_cmbx.Location = new System.Drawing.Point(3, 3);
-            this.Filter_opt_cmbx.Name = "Filter_opt_cmbx";
-            this.Filter_opt_cmbx.Size = new System.Drawing.Size(74, 21);
-            this.Filter_opt_cmbx.TabIndex = 2;
-            this.Filter_opt_cmbx.SelectedIndexChanged += new System.EventHandler(this.Filter_opt_cmbx_SelectedIndexChanged);
-            // 
-            // Filter_btn
-            // 
-            this.Filter_btn.Location = new System.Drawing.Point(3, 29);
-            this.Filter_btn.Name = "Filter_btn";
-            this.Filter_btn.Size = new System.Drawing.Size(74, 23);
-            this.Filter_btn.TabIndex = 3;
-            this.Filter_btn.Text = "סנן";
-            this.Filter_btn.UseVisualStyleBackColor = true;
-            this.Filter_btn.Click += new System.EventHandler(this.Filter_btn_Click);
-            // 
-            // Filter_Values_tlp
-            // 
-            this.Filter_Values_tlp.ColumnCount = 1;
-            this.Filter_Values_tlp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.Filter_Values_tlp.Location = new System.Drawing.Point(83, 29);
-            this.Filter_Values_tlp.Name = "Filter_Values_tlp";
-            this.Filter_Values_tlp.RowCount = 1;
-            this.Filter_Values_tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.Filter_Values_tlp.Size = new System.Drawing.Size(74, 24);
-            this.Filter_Values_tlp.TabIndex = 4;
             // 
             // label3
             // 
@@ -233,16 +155,6 @@
             this.Tel_txtbx.Size = new System.Drawing.Size(75, 20);
             this.Tel_txtbx.TabIndex = 5;
             // 
-            // Title_lbl
-            // 
-            this.Title_lbl.AutoSize = true;
-            this.Title_lbl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Title_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Title_lbl.Location = new System.Drawing.Point(3, 0);
-            this.Title_lbl.Name = "Title_lbl";
-            this.Title_lbl.Size = new System.Drawing.Size(353, 45);
-            this.Title_lbl.TabIndex = 7;
-            // 
             // BirthDate_dtpk
             // 
             this.BirthDate_dtpk.CustomFormat = "";
@@ -268,10 +180,10 @@
             // Connections_gb
             // 
             this.Connections_gb.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Connections_gb.Location = new System.Drawing.Point(166, 307);
+            this.Connections_gb.Location = new System.Drawing.Point(0, 313);
             this.Connections_gb.Name = "Connections_gb";
             this.Connections_gb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Connections_gb.Size = new System.Drawing.Size(518, 89);
+            this.Connections_gb.Size = new System.Drawing.Size(520, 107);
             this.Connections_gb.TabIndex = 8;
             this.Connections_gb.TabStop = false;
             this.Connections_gb.Text = "קשרים";
@@ -291,11 +203,11 @@
             this.Info_gb.Controls.Add(this.Tel_txtbx);
             this.Info_gb.Controls.Add(this.Name_txtbx);
             this.Info_gb.Controls.Add(this.label3);
-            this.Info_gb.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.Info_gb.Location = new System.Drawing.Point(3, 53);
+            this.Info_gb.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Info_gb.Location = new System.Drawing.Point(162, 30);
             this.Info_gb.Name = "Info_gb";
             this.Info_gb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Info_gb.Size = new System.Drawing.Size(353, 221);
+            this.Info_gb.Size = new System.Drawing.Size(358, 283);
             this.Info_gb.TabIndex = 9;
             this.Info_gb.TabStop = false;
             this.Info_gb.Text = "פרטים אישיים";
@@ -356,7 +268,7 @@
             this.Status_gb.Controls.Add(this.Avaiability_cmbx);
             this.Status_gb.Controls.Add(this.label6);
             this.Status_gb.Controls.Add(this.label2);
-            this.Status_gb.Location = new System.Drawing.Point(6, 186);
+            this.Status_gb.Location = new System.Drawing.Point(12, 219);
             this.Status_gb.Name = "Status_gb";
             this.Status_gb.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Status_gb.Size = new System.Drawing.Size(138, 88);
@@ -401,141 +313,225 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "ניסיון:";
             // 
-            // menuStrip1
+            // Exit_btn
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.קובץToolStripMenuItem,
-            this.אישקשרToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip1.Size = new System.Drawing.Size(684, 24);
-            this.menuStrip1.TabIndex = 8;
-            this.menuStrip1.Text = "menuStrip1";
+            this.Exit_btn.BackColor = System.Drawing.Color.Red;
+            this.Exit_btn.FlatAppearance.BorderSize = 0;
+            this.Exit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Exit_btn.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Exit_btn.ForeColor = System.Drawing.Color.White;
+            this.Exit_btn.Location = new System.Drawing.Point(670, 0);
+            this.Exit_btn.Name = "Exit_btn";
+            this.Exit_btn.Size = new System.Drawing.Size(30, 30);
+            this.Exit_btn.TabIndex = 10;
+            this.Exit_btn.Text = "X";
+            this.Exit_btn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Exit_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.Exit_btn.UseVisualStyleBackColor = false;
+            this.Exit_btn.Click += new System.EventHandler(this.Exit_btn_Click);
             // 
-            // קובץToolStripMenuItem
+            // Side_panel
             // 
-            this.קובץToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.שמירהToolStripMenuItem});
-            this.קובץToolStripMenuItem.Name = "קובץToolStripMenuItem";
-            this.קובץToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.קובץToolStripMenuItem.Text = "קובץ";
+            this.Side_panel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Side_panel.Controls.Add(this.Contacts_lstbx);
+            this.Side_panel.Controls.Add(this.panel3);
+            this.Side_panel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Side_panel.Location = new System.Drawing.Point(520, 30);
+            this.Side_panel.Name = "Side_panel";
+            this.Side_panel.Size = new System.Drawing.Size(180, 420);
+            this.Side_panel.TabIndex = 13;
             // 
-            // שמירהToolStripMenuItem
+            // panel3
             // 
-            this.שמירהToolStripMenuItem.Name = "שמירהToolStripMenuItem";
-            this.שמירהToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
-            this.שמירהToolStripMenuItem.Text = "שמירה";
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.panel3.Controls.Add(this.Filter_multichoice_cmbx);
+            this.panel3.Controls.Add(this.Filter_string_txtbx);
+            this.panel3.Controls.Add(this.Filter_search_btn);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.Filtering_cmbx);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(180, 71);
+            this.panel3.TabIndex = 3;
             // 
-            // אישקשרToolStripMenuItem
+            // Filter_multichoice_cmbx
             // 
-            this.אישקשרToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AddContactToolStripMenuItem,
-            this.DeleteCurrToolStripMenuItem,
-            this.UpdateCurrToolStripMenuItem});
-            this.אישקשרToolStripMenuItem.Name = "אישקשרToolStripMenuItem";
-            this.אישקשרToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.אישקשרToolStripMenuItem.Text = "איש קשר";
+            this.Filter_multichoice_cmbx.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Filter_multichoice_cmbx.FormattingEnabled = true;
+            this.Filter_multichoice_cmbx.Location = new System.Drawing.Point(40, 44);
+            this.Filter_multichoice_cmbx.Name = "Filter_multichoice_cmbx";
+            this.Filter_multichoice_cmbx.Size = new System.Drawing.Size(126, 24);
+            this.Filter_multichoice_cmbx.TabIndex = 4;
+            this.Filter_multichoice_cmbx.Visible = false;
             // 
-            // AddContactToolStripMenuItem
+            // Filter_string_txtbx
             // 
-            this.AddContactToolStripMenuItem.Name = "AddContactToolStripMenuItem";
-            this.AddContactToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.AddContactToolStripMenuItem.Text = "הוסף חדש";
-            this.AddContactToolStripMenuItem.Click += new System.EventHandler(this.AddContactToolStripMenuItem_Click);
+            this.Filter_string_txtbx.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Filter_string_txtbx.Location = new System.Drawing.Point(40, 45);
+            this.Filter_string_txtbx.Name = "Filter_string_txtbx";
+            this.Filter_string_txtbx.Size = new System.Drawing.Size(126, 22);
+            this.Filter_string_txtbx.TabIndex = 15;
+            this.Filter_string_txtbx.Visible = false;
             // 
-            // DeleteCurrToolStripMenuItem
+            // Filter_search_btn
             // 
-            this.DeleteCurrToolStripMenuItem.Name = "DeleteCurrToolStripMenuItem";
-            this.DeleteCurrToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.DeleteCurrToolStripMenuItem.Text = "מחק נוכחי";
+            this.Filter_search_btn.BackgroundImage = global::HR_Program.Properties.Resources.mag1_x48;
+            this.Filter_search_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Filter_search_btn.Location = new System.Drawing.Point(4, 40);
+            this.Filter_search_btn.Name = "Filter_search_btn";
+            this.Filter_search_btn.Size = new System.Drawing.Size(30, 30);
+            this.Filter_search_btn.TabIndex = 14;
+            this.Filter_search_btn.TabStop = false;
+            this.Filter_search_btn.Click += new System.EventHandler(this.Filter_search_btn_Click);
+            this.Filter_search_btn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.Filter_search_btn.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.Filter_search_btn.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            this.Filter_search_btn.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
-            // UpdateCurrToolStripMenuItem
+            // label10
             // 
-            this.UpdateCurrToolStripMenuItem.Name = "UpdateCurrToolStripMenuItem";
-            this.UpdateCurrToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
-            this.UpdateCurrToolStripMenuItem.Text = "עדכן נוכחי";
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(116)))), ((int)(((byte)(155)))));
+            this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label10.Location = new System.Drawing.Point(110, 8);
+            this.label10.Name = "label10";
+            this.label10.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label10.Size = new System.Drawing.Size(66, 18);
+            this.label10.TabIndex = 1;
+            this.label10.Text = "סינון עפ\"י:";
             // 
-            // Information_tlp
+            // Filtering_cmbx
             // 
-            this.Information_tlp.ColumnCount = 2;
-            this.Information_tlp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 153F));
-            this.Information_tlp.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 365F));
-            this.Information_tlp.Controls.Add(this.tableLayoutPanel5, 0, 0);
-            this.Information_tlp.Controls.Add(this.tableLayoutPanel3, 1, 0);
-            this.Information_tlp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Information_tlp.Location = new System.Drawing.Point(166, 24);
-            this.Information_tlp.Name = "Information_tlp";
-            this.Information_tlp.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Information_tlp.RowCount = 1;
-            this.Information_tlp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.Information_tlp.Size = new System.Drawing.Size(518, 283);
-            this.Information_tlp.TabIndex = 11;
+            this.Filtering_cmbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Filtering_cmbx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Filtering_cmbx.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Filtering_cmbx.FormattingEnabled = true;
+            this.Filtering_cmbx.Items.AddRange(new object[] {
+            "ניסיון",
+            "גיל",
+            "שם"});
+            this.Filtering_cmbx.Location = new System.Drawing.Point(4, 7);
+            this.Filtering_cmbx.Name = "Filtering_cmbx";
+            this.Filtering_cmbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Filtering_cmbx.Size = new System.Drawing.Size(100, 24);
+            this.Filtering_cmbx.TabIndex = 2;
+            this.Filtering_cmbx.SelectedIndexChanged += new System.EventHandler(this.Filtering_cmbx_SelectedIndexChanged);
             // 
-            // tableLayoutPanel5
+            // Main_panel
             // 
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.Status_gb, 0, 1);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(147, 277);
-            this.tableLayoutPanel5.TabIndex = 0;
+            this.Main_panel.Controls.Add(this.Info_gb);
+            this.Main_panel.Controls.Add(this.panel2);
+            this.Main_panel.Controls.Add(this.Connections_gb);
+            this.Main_panel.Controls.Add(this.Status_gb);
+            this.Main_panel.Controls.Add(this.panel1);
+            this.Main_panel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Main_panel.Location = new System.Drawing.Point(0, 30);
+            this.Main_panel.Name = "Main_panel";
+            this.Main_panel.Size = new System.Drawing.Size(520, 420);
+            this.Main_panel.TabIndex = 15;
             // 
-            // tableLayoutPanel3
+            // panel2
             // 
-            this.tableLayoutPanel3.ColumnCount = 1;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.Info_gb, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.Title_lbl, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(156, 3);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.24549F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.75451F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(359, 277);
-            this.tableLayoutPanel3.TabIndex = 1;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(141)))), ((int)(((byte)(178)))));
+            this.panel2.Controls.Add(this.Person_remove_pbtn);
+            this.panel2.Controls.Add(this.Person_update_pbtn);
+            this.panel2.Controls.Add(this.Person_add_pbtn);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(520, 30);
+            this.panel2.TabIndex = 12;
             // 
-            // Form1
+            // Person_remove_pbtn
+            // 
+            this.Person_remove_pbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(141)))), ((int)(((byte)(178)))));
+            this.Person_remove_pbtn.BackgroundImage = global::HR_Program.Properties.Resources.person_remove_x48;
+            this.Person_remove_pbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Person_remove_pbtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Person_remove_pbtn.Location = new System.Drawing.Point(379, 0);
+            this.Person_remove_pbtn.Name = "Person_remove_pbtn";
+            this.Person_remove_pbtn.Size = new System.Drawing.Size(47, 30);
+            this.Person_remove_pbtn.TabIndex = 14;
+            this.Person_remove_pbtn.TabStop = false;
+            this.Person_remove_pbtn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Person_remove_pbtn_MouseDown);
+            this.Person_remove_pbtn.MouseEnter += new System.EventHandler(this.Person_remove_pbtn_MouseEnter);
+            this.Person_remove_pbtn.MouseLeave += new System.EventHandler(this.Person_remove_pbtn_MouseLeave);
+            // 
+            // Person_update_pbtn
+            // 
+            this.Person_update_pbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(141)))), ((int)(((byte)(178)))));
+            this.Person_update_pbtn.BackgroundImage = global::HR_Program.Properties.Resources.person_update_x48;
+            this.Person_update_pbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Person_update_pbtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Person_update_pbtn.Location = new System.Drawing.Point(426, 0);
+            this.Person_update_pbtn.Name = "Person_update_pbtn";
+            this.Person_update_pbtn.Size = new System.Drawing.Size(47, 30);
+            this.Person_update_pbtn.TabIndex = 14;
+            this.Person_update_pbtn.TabStop = false;
+            this.Person_update_pbtn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Person_update_pbtn_MouseDown);
+            this.Person_update_pbtn.MouseEnter += new System.EventHandler(this.Person_update_pbtn_MouseEnter);
+            this.Person_update_pbtn.MouseLeave += new System.EventHandler(this.Person_update_pbtn_MouseLeave);
+            // 
+            // Person_add_pbtn
+            // 
+            this.Person_add_pbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(141)))), ((int)(((byte)(178)))));
+            this.Person_add_pbtn.BackgroundImage = global::HR_Program.Properties.Resources.person_add_x48;
+            this.Person_add_pbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Person_add_pbtn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Person_add_pbtn.Location = new System.Drawing.Point(473, 0);
+            this.Person_add_pbtn.Name = "Person_add_pbtn";
+            this.Person_add_pbtn.Size = new System.Drawing.Size(47, 30);
+            this.Person_add_pbtn.TabIndex = 14;
+            this.Person_add_pbtn.TabStop = false;
+            this.Person_add_pbtn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Person_add_pbtn_MouseDown_1);
+            this.Person_add_pbtn.MouseEnter += new System.EventHandler(this.Person_add_pbtn_MouseEnter_1);
+            this.Person_add_pbtn.MouseLeave += new System.EventHandler(this.Person_add_pbtn_MouseLeave_1);
+            // 
+            // Top_bar_pctb
+            // 
+            this.Top_bar_pctb.BackColor = System.Drawing.Color.SteelBlue;
+            this.Top_bar_pctb.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Top_bar_pctb.Location = new System.Drawing.Point(0, 0);
+            this.Top_bar_pctb.Name = "Top_bar_pctb";
+            this.Top_bar_pctb.Size = new System.Drawing.Size(700, 30);
+            this.Top_bar_pctb.TabIndex = 12;
+            this.Top_bar_pctb.TabStop = false;
+            this.Top_bar_pctb.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Top_bar_pctb_MouseDown);
+            // 
+            // ContactsScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 396);
-            this.Controls.Add(this.Information_tlp);
-            this.Controls.Add(this.Connections_gb);
-            this.Controls.Add(this.Contact_list_tlp);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(700, 450);
+            this.Controls.Add(this.Main_panel);
+            this.Controls.Add(this.Side_panel);
+            this.Controls.Add(this.Exit_btn);
+            this.Controls.Add(this.Top_bar_pctb);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
-            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Name = "ContactsScreen";
             this.RightToLeftLayout = true;
             this.ShowIcon = false;
-            this.Text = "השידוכטרון 2000";
-            this.Contact_list_tlp.ResumeLayout(false);
-            this.Filter_tlp.ResumeLayout(false);
-            this.Filter_tlp.PerformLayout();
+            this.Text = "ContactsScreen";
             this.Info_gb.ResumeLayout(false);
             this.Info_gb.PerformLayout();
             this.Status_gb.ResumeLayout(false);
             this.Status_gb.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.Information_tlp.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
+            this.Side_panel.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Filter_search_btn)).EndInit();
+            this.Main_panel.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Person_remove_pbtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Person_update_pbtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Person_add_pbtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Top_bar_pctb)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -543,14 +539,12 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListBox Contacts_lstbx;
-        private System.Windows.Forms.TableLayoutPanel Contact_list_tlp;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox Name_txtbx;
         private System.Windows.Forms.TextBox Address_txtbx;
         private System.Windows.Forms.TextBox Tel_txtbx;
-        private System.Windows.Forms.Label Title_lbl;
         private System.Windows.Forms.DateTimePicker BirthDate_dtpk;
         private System.Windows.Forms.TextBox Age_txtbx;
         private System.Windows.Forms.GroupBox Connections_gb;
@@ -562,24 +556,23 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox Cell_txtbx;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.TableLayoutPanel Information_tlp;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.ToolStripMenuItem קובץToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem שמירהToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem אישקשרToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem AddContactToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem DeleteCurrToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem UpdateCurrToolStripMenuItem;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.TableLayoutPanel Filter_tlp;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox Filter_opt_cmbx;
-        private System.Windows.Forms.Button Filter_btn;
-        private System.Windows.Forms.TableLayoutPanel Filter_Values_tlp;
         private System.Windows.Forms.ComboBox Experiance_cmbx;
         private System.Windows.Forms.TextBox Summary_txtbx;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox Top_bar_pctb;
+        private System.Windows.Forms.Button Exit_btn;
+        private System.Windows.Forms.Panel Side_panel;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox Filtering_cmbx;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox Filter_search_btn;
+        private System.Windows.Forms.TextBox Filter_string_txtbx;
+        private System.Windows.Forms.ComboBox Filter_multichoice_cmbx;
+        private System.Windows.Forms.Panel Main_panel;
+        private System.Windows.Forms.PictureBox Person_remove_pbtn;
+        private System.Windows.Forms.PictureBox Person_update_pbtn;
+        private System.Windows.Forms.PictureBox Person_add_pbtn;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 
