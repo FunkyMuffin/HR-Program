@@ -12,23 +12,18 @@ namespace HR_Program
 {
     public partial class ContactsScreen : Form
     {
-        private jsonParserAllToMemAllToMem jsonParserAllToMemAllToMem = new jsonParserAllToMemAllToMem();
+        private jsonParser jsonParser = new jsonParser();
         private Filters filters;
-
-        private Contact template = new Contact("","",DateTime.Now,"","", "");
 
         public ContactsScreen()
         {
             InitializeComponent();
-            filters = new Filters(jsonParserAllToMemAllToMem);
+            filters = new Filters(jsonParser);
 
-            jsonParserAllToMemAllToMem.Show();
             try
             {
-                List<string> kuk = jsonParserAllToMemAllToMem.getNames();
-
                 Contacts_lstbx.SelectedIndexChanged -= Contacts_lstbx_SelectedIndexChanged;
-                Contacts_lstbx.DataSource = kuk; 
+                Contacts_lstbx.DataSource = jsonParser.getNames(); 
                 Contacts_lstbx.SelectedIndex = -1;
                 Contacts_lstbx.SelectedIndexChanged += Contacts_lstbx_SelectedIndexChanged;
             }
@@ -52,9 +47,9 @@ namespace HR_Program
 
             int id = int.Parse(selection.Split('.')[0]);
 
-            //Contact selected = jsonParserAllToMem.GetContact(id);
+            Contact selected = jsonParser.GetContact(id);
 
-            //populateInformation(selected);
+            populateInformation(selected);
         }
 
 
@@ -120,7 +115,7 @@ namespace HR_Program
                 summary = summary_txtbx.Text
             };
 
-            jsonParserAllToMemAllToMem.AddContact(contact);
+            jsonParser.AddContact(contact);
         }
 
         private void Exit_btn_Click(object sender, EventArgs e) => Close();

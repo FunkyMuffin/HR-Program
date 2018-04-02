@@ -169,11 +169,11 @@
             // 
             // Age_txtbx
             // 
-            this.Age_txtbx.Location = new System.Drawing.Point(110, 45);
+            this.Age_txtbx.Location = new System.Drawing.Point(135, 45);
             this.Age_txtbx.Name = "Age_txtbx";
             this.Age_txtbx.ReadOnly = true;
             this.Age_txtbx.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Age_txtbx.Size = new System.Drawing.Size(53, 20);
+            this.Age_txtbx.Size = new System.Drawing.Size(30, 20);
             this.Age_txtbx.TabIndex = 5;
             this.Age_txtbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 

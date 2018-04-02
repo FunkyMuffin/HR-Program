@@ -8,9 +8,9 @@ namespace HR_Program
 {
     class Filters
     {
-        jsonParserAllToMemAllToMem jsonParserAllToMem;
+        jsonParser jsonParserAllToMem;
 
-        public Filters(jsonParserAllToMemAllToMem parser)
+        public Filters(jsonParser parser)
         {
             jsonParserAllToMem = parser;
         }

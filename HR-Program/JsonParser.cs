@@ -11,7 +11,7 @@ using System.Data;
 
 namespace HR_Program
 {
-    class jsonParserAllToMemAllToMem
+    class jsonParser
     {
         private string file_path;
         private ContactBook Contacts;
@@ -23,20 +23,12 @@ namespace HR_Program
         //  more than 1 - show popup to select which file to use.
         //  no file     - show popup to select a file from dialogbox.
         //
-        public jsonParserAllToMemAllToMem()
+        public jsonParser()
         {
             file_path = getFilePath();
 
             FileStream fileStream = new FileStream(file_path, FileMode.Open);
             Contacts= (ContactBook)DeserializeFromStream(fileStream);
-            
-
-        }
-
-
-        public void Show()
-        {
-            MessageBox.Show(Contacts.ToString());
         }
 
         public List<string> getNames()
@@ -82,11 +74,19 @@ namespace HR_Program
             
         }
 
+        public Contact GetContact(int id)
+        {
+            return Contacts.contactbook.Where(x => x.id == id).First();
+
+        }
+
         public void AddContact(Contact contact)
         {
             
         }
 
+
+        // SUPPORT METHODS //
         private string getFilePath()
         {
             string[] files = Directory.GetFiles(Directory.GetCurrentDirectory()).Where(x => x.EndsWith(".json")).ToArray();
