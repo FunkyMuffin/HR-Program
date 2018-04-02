@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -50,11 +50,17 @@
   <ItemGroup>
     <Compile Include="Contact.cs" />
     <Compile Include="Filters.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="ContactsScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ContactsScreen.Designer.cs">
+      <DependentUpon>ContactsScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HubScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HubScreen.Designer.cs">
+      <DependentUpon>HubScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="JsonFilesModal.cs">
       <SubType>Form</SubType>
@@ -65,8 +71,17 @@
     <Compile Include="JsonParser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="SchedulesScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SchedulesScreen.Designer.cs">
+      <DependentUpon>SchedulesScreen.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ContactsScreen.resx">
+      <DependentUpon>ContactsScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HubScreen.resx">
+      <DependentUpon>HubScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="JsonFilesModal.resx">
       <DependentUpon>JsonFilesModal.cs</DependentUpon>

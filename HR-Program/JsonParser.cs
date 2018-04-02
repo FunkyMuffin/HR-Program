@@ -14,6 +14,13 @@ namespace HR_Program
     {
         private string file_path;
 
+        // 
+        // Constructor - Looks for a '.json' file under CurrentDir.
+        // If files are found:
+        //  only 1      - uses it and continue.
+        //  more than 1 - show popup to select which file to use.
+        //  no file     - show popup to select a file from dialogbox.
+        //
         public JsonParser()
         {
             string[] files = Directory.GetFiles(Directory.GetCurrentDirectory()).Where( x => x.EndsWith(".json")).ToArray();
@@ -27,13 +34,36 @@ namespace HR_Program
                     }
                 }
             }
-            else
+            else if (files.Count() == 1)
             {
                 file_path = files[0];
             }
+            else
+            {
+                using (OpenFileDialog ofd = new OpenFileDialog())
+                {
+                    ofd.Filter = "JSON | *.json";
+                    ofd.Title = "בחר קובץ ארכיון";
+
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                    {
+                        file_path = ofd.FileName;
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("לא נבחר קובץ ארכיון!");
+                    }
+                }
+                
+            }
         }
 
-        public List<string> getNames()
+
+        //
+        // GetNames - returns list of names from file_path variable.
+        //
+        public List<string> GetNames()
         {
             JObject json = (JObject)JsonConvert.DeserializeObject(File.ReadAllText(file_path, Encoding.UTF8));
 
@@ -58,9 +88,17 @@ namespace HR_Program
                 }
             }
 
+            Contact.ID = int.Parse(name_list[name_list.Count() - 1].Split('.')[0]);
             return name_list;
         }
 
+        //
+        //  GetNames - returns list of names from file_path variable.
+        //  Args:
+        //      field   - Name of the filtering field [name | age | experiance ].
+        //      value1  - First value.
+        //      value2  - Second value, optional.
+        //
         public List<string> getNames(string field, string value1, string value2 = null)
         {
             List<string> name_list = new List<string>();
@@ -122,17 +160,21 @@ namespace HR_Program
             return name_list;
         }
 
+
+        //
+        //  GeContact - returns Contact object by id
+        //  Args:
+        //      id - ID if selected person
+        //
         public Contact GetContact(int id)
         {
             JObject full_json = (JObject)JsonConvert.DeserializeObject(File.ReadAllText(file_path, Encoding.UTF8));
 
-            var raw_json = (from a in full_json["ContactBook"]
+            var queried_json = (from a in full_json["ContactBook"]
                              where a["id"].ToString().Equals(id.ToString())
                              select a).ToList();
 
-            JObject person = JObject.Parse(raw_json[0].ToString());
-
-            full_json = null;
+            JObject person = JObject.Parse(queried_json[0].ToString());
 
             Contact contact = new Contact
             {
@@ -150,8 +192,12 @@ namespace HR_Program
 
             };
 
-            
             return contact;
+        }
+
+        public void AddContact(Contact contact)
+        {
+            
         }
     }
 }

@@ -1,0 +1,13 @@
+C:\Users\Omer\Documents\Visual Studio 2017\Projects\HR-Program\HR-Program\bin\Release\HR-Program.exe.config
+C:\Users\Omer\Documents\Visual Studio 2017\Projects\HR-Program\HR-Program\bin\Release\HR-Program.exe
+C:\Users\Omer\Documents\Visual Studio 2017\Projects\HR-Program\HR-Program\bin\Release\HR-Program.pdb
+C:\Users\Omer\Documents\Visual Studio 2017\Projects\HR-Program\HR-Program\bin\Release\Newtonsoft.Json.dll
+C:\Users\Omer\Documents\Visual Studio 2017\Projects\HR-Program\HR-Program\bin\Release\Newtonsoft.Json.xml
+C:\Users\Omer\Documents\Visual Studio 2017\Projects\HR-Program\HR-Program\obj\Release\HR-Program.csprojResolveAssemblyReference.cache
+C:\Users\Omer\Documents\Visual Studio 2017\Projects\HR-Program\HR-Program\obj\Release\HR_Program.Form1.resources
+C:\Users\Omer\Documents\Visual Studio 2017\Projects\HR-Program\HR-Program\obj\Release\HR_Program.JsonFilesModal.resources
+C:\Users\Omer\Documents\Visual Studio 2017\Projects\HR-Program\HR-Program\obj\Release\HR_Program.Properties.Resources.resources
+C:\Users\Omer\Documents\Visual Studio 2017\Projects\HR-Program\HR-Program\obj\Release\HR-Program.csproj.GenerateResource.Cache
+C:\Users\Omer\Documents\Visual Studio 2017\Projects\HR-Program\HR-Program\obj\Release\HR-Program.csproj.CoreCompileInputs.cache
+C:\Users\Omer\Documents\Visual Studio 2017\Projects\HR-Program\HR-Program\obj\Release\HR-Program.exe
+C:\Users\Omer\Documents\Visual Studio 2017\Projects\HR-Program\HR-Program\obj\Release\HR-Program.pdb
