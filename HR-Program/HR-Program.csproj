@@ -65,6 +65,7 @@
     <Compile Include="HubScreen.Designer.cs">
       <DependentUpon>HubScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImageParser.cs" />
     <Compile Include="JsonFilesModal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +152,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\person_update_over_x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\free-vector-x-icon-clip-art_117159_X_Icon_clip_art_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X_icon_x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X_icon_click_x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X_icon_over_x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_new_click_x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_new_over_x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_new_x48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -29,5 +29,6 @@ namespace HR_Program
             comboBox.Font = new Font(new FontFamily("Arial"), 10, FontStyle.Regular);
             
         }
+
     }
 }

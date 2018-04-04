@@ -14,33 +14,44 @@ namespace HR_Program
     class jsonParser
     {
         private string file_path;
-        private ContactBook Contacts;
+        private List<Contact> ContactList;
+        public static List<string> Names;
 
         // 
-        // Constructor - Looks for a '.json' file under CurrentDir.
-        // If files are found:
-        //  only 1      - uses it and continue.
-        //  more than 1 - show popup to select which file to use.
-        //  no file     - show popup to select a file from dialogbox.
+        // Constructor - Gets .json file path from getFilePath and Parse it into a list of strongly-typed classes 'Contact' and 'Adviser".
         //
         public jsonParser()
         {
+            ContactBook book = new ContactBook();
+
             file_path = getFilePath();
 
             FileStream fileStream = new FileStream(file_path, FileMode.Open);
-            Contacts= (ContactBook)DeserializeFromStream(fileStream);
+            book = DeserializeFromStream(fileStream);
+
+            ContactList = book.contactbook;
+
+            Names = getNames();
         }
 
+        // 
+        // Public Method - Gets formated names from all the contacts in the ContactList.
+        // Returns list of all formated names.
+        //
         public List<string> getNames()
         {
             List<string> names = new List<string>();
-            foreach (var contact in Contacts.contactbook)
+            foreach (var contact in ContactList)
             {
                 names.Add(contact.ToString());
             }
             return names;
         }
 
+        // 
+        // Public Method - overloaded method for filtering by 'name' / 'age' / 'experience'.
+        // Returns list of all formated names.
+        //
         public List<string> getNames(string field, string value1, string value2 = null)
         {
             List<string> name_list = new List<string>();
@@ -48,18 +59,18 @@ namespace HR_Program
 
             if (field == "name")
             {
-                filtered_list = Contacts.contactbook.Where(x => x.first_name.Contains(value1) || x.last_name.Contains(value1)).ToList();
+                filtered_list = ContactList.Where(x => x.first_name.Contains(value1) || x.last_name.Contains(value1)).ToList();
             }
             else if (field == "age")
             {
                 DateTime min_date = DateTime.Now.AddYears(int.Parse(value1) * -1); // Will be higher than birth_date
                 DateTime max_date = DateTime.Now.AddYears(int.Parse(value2) * -1); // Will be lower than birth
 
-                filtered_list = Contacts.contactbook.Where(x => x.birth_date < min_date && x.birth_date > max_date).ToList();
+                filtered_list = ContactList.Where(x => x.birth_date < min_date && x.birth_date > max_date).ToList();
             }
             else if (field == "experience")
             {
-                filtered_list = Contacts.contactbook.Where(x => x.experience == value1).ToList();
+                filtered_list = ContactList.Where(x => x.experience == value1).ToList();
             }
             else
             {
@@ -74,19 +85,89 @@ namespace HR_Program
             
         }
 
+        // 
+        // Public Method - Gets a specific contact within the ContactList.
+        // Returns Contact object.
+        //
         public Contact GetContact(int id)
         {
-            return Contacts.contactbook.Where(x => x.id == id).First();
+            return ContactList.Where(x => x.id == id).First();
 
         }
 
+        // 
+        // Public Method - Checks if the id is taken:
+        //   Taken - informs users and finish.
+        //   Not taken - Adds the contact to the ContactList and adds formated name to the Names list.
+        //
         public void AddContact(Contact contact)
         {
+            if (!idTaken(contact.id))
+            {
+                ContactList.Add(contact);
+                Names.Add(contact.ToString());
+            }
+            else
+            {
+                MessageBox.Show("מ'ס מזהה כבר נמצא בשימוש");
+            }
+
+        }
+
+        // 
+        // Public Method - Checks if the id is taken:
+        //   Taken - Looks for the Contact and overrides if with the new_contact object.
+        //   Not taken - informs users and finish.
+        //
+        public void updateContact(Contact new_contact)
+        {
+            if (idTaken(new_contact.id))
+            {
+                int index = ContactList.IndexOf(ContactList.Where(x => x.id == new_contact.id).First());
+
+                ContactList[index] = new_contact;
+
+                Names[index] = new_contact.ToString();
+            }
+            else
+            {
+                MessageBox.Show("מ'ס מזהה לא נמצא");
+            }
             
+        }
+
+        // 
+        // Public Method - Checks if the id is taken:
+        //   Taken - Removes Contact by provided id from ContactList and Names list.
+        //   Not taken - informs users and finish.
+        //
+        public void removeContact(int id)
+        {
+            if (idTaken(id))
+            {
+                int index = ContactList.IndexOf(ContactList.Where(x => x.id == id).First());
+
+                ContactList.Remove(ContactList[index]);
+
+                Names.Remove(ContactList[index-1].ToString());
+            }
+            else
+            {
+                MessageBox.Show("מ'ס מזהה לא נמצא");
+            }
         }
 
 
         // SUPPORT METHODS //
+
+        //
+        // Support Method- Searches for '.json' files.
+        // If files are found:
+        //  only 1      - uses it and continue.
+        //  more than 1 - show popup to select which file to use.
+        //  no file     - show popup to select a file from dialogbox.
+        //  Returns the filename as string.
+        //
         private string getFilePath()
         {
             string[] files = Directory.GetFiles(Directory.GetCurrentDirectory()).Where(x => x.EndsWith(".json")).ToArray();
@@ -130,7 +211,11 @@ namespace HR_Program
             }
         }
 
-        private object DeserializeFromStream(Stream stream)
+        //
+        // Support Method- Deserialize JSON format from a FileStream object.
+        // Returns a 'ContactBook' object.
+        //
+        private ContactBook DeserializeFromStream(Stream stream)
         {
             var serializer = new JsonSerializer();
 
@@ -139,6 +224,15 @@ namespace HR_Program
             {
                 return serializer.Deserialize<ContactBook>(jsonTextReader);
             }
+        }
+
+        //
+        // Support Method- Check whether the provided id already exist.
+        // Returns bool.
+        //
+        private bool idTaken(int id)
+        {
+            return ContactList.Where(x => x.id == id).Count() != 0 ? true : false;
         }
     }
 }

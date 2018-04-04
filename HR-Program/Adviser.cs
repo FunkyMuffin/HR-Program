@@ -10,6 +10,6 @@ namespace HR_Program
     {
         public string name { get; set; }
         public string relationship { get; set; }
-        public string phone { get; set; }
+        public string number { get; set; }
     }
 }
