@@ -15,6 +15,7 @@ namespace HR_Program
     {
         private string file_path;
         private ContactBook Contacts;
+        public static List<string> Names;
 
         // 
         // Constructor - Looks for a '.json' file under CurrentDir.
@@ -29,6 +30,8 @@ namespace HR_Program
 
             FileStream fileStream = new FileStream(file_path, FileMode.Open);
             Contacts= (ContactBook)DeserializeFromStream(fileStream);
+
+            Names = getNames();
         }
 
         public List<string> getNames()
@@ -82,7 +85,49 @@ namespace HR_Program
 
         public void AddContact(Contact contact)
         {
+            if (!idTaken(contact.id))
+            {
+                Contacts.contactbook.Add(contact);
+                Names.Add(contact.ToString());
+            }
+            else
+            {
+                MessageBox.Show("מ'ס מזהה כבר נמצא בשימוש");
+            }
+
+        }
+
+        public void updateContact(Contact new_contact)
+        {
+            if (idTaken(new_contact.id))
+            {
+                int index = Contacts.contactbook.IndexOf(Contacts.contactbook.Where(x => x.id == new_contact.id).First());
+
+                Contacts.contactbook[index] = new_contact;
+
+                Names[index] = new_contact.ToString();
+            }
+            else
+            {
+                MessageBox.Show("מ'ס מזהה לא נמצא");
+            }
             
+        }
+
+        public void removeContact(int id)
+        {
+            if (idTaken(id))
+            {
+                int index = Contacts.contactbook.IndexOf(Contacts.contactbook.Where(x => x.id == id).First());
+
+                Contacts.contactbook.Remove(Contacts.contactbook[index]);
+
+                Names.Remove(Contacts.contactbook[index-1].ToString());
+            }
+            else
+            {
+                MessageBox.Show("מ'ס מזהה לא נמצא");
+            }
         }
 
 
@@ -139,6 +184,11 @@ namespace HR_Program
             {
                 return serializer.Deserialize<ContactBook>(jsonTextReader);
             }
+        }
+
+        private bool idTaken(int id)
+        {
+            return Contacts.contactbook.Where(x => x.id == id).Count() != 0 ? true : false;
         }
     }
 }

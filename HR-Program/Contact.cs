@@ -11,6 +11,7 @@ namespace HR_Program
     {
         public static int ID { get; set; }
         public static string[] experiences = new[] { "ללא", "מתחיל", "מנוסה" };
+        public static string[] ethnicities = new[] { "אשכנז", "ספרד" };
 
 
         public int id { get; set; }
@@ -44,6 +45,7 @@ namespace HR_Program
             }
         }
         public string summary { get; set; }
+        public string image_name { get; set; }
 
         public Contact()
         {

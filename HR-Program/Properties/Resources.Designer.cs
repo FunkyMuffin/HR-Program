@@ -123,6 +123,36 @@ namespace HR_Program.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap person_new_click_x48 {
+            get {
+                object obj = ResourceManager.GetObject("person_new_click_x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap person_new_over_x48 {
+            get {
+                object obj = ResourceManager.GetObject("person_new_over_x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap person_new_x48 {
+            get {
+                object obj = ResourceManager.GetObject("person_new_x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap person_remove_click_x48 {
             get {
                 object obj = ResourceManager.GetObject("person_remove_click_x48", resourceCulture);
@@ -176,6 +206,36 @@ namespace HR_Program.Properties {
         internal static System.Drawing.Bitmap person_update_x48 {
             get {
                 object obj = ResourceManager.GetObject("person_update_x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap X_icon_click_x48 {
+            get {
+                object obj = ResourceManager.GetObject("X_icon_click_x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap X_icon_over_x48 {
+            get {
+                object obj = ResourceManager.GetObject("X_icon_over_x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap X_icon_x48 {
+            get {
+                object obj = ResourceManager.GetObject("X_icon_x48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
