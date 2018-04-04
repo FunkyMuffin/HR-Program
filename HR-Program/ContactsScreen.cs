@@ -204,7 +204,7 @@ namespace HR_Program
                     summary = summary_txtbx.Text
                 };
 
-                jsonParser.updateContact(contact);
+                jsonParser.UpdateContact(contact);
                 updateList();
                 MessageBox.Show("רשומה עודכנה");
 
@@ -219,7 +219,7 @@ namespace HR_Program
         {
             if (Id_txtbx.Text != "")
             {
-                jsonParser.removeContact(int.Parse(Id_txtbx.Text));
+                jsonParser.RemoveContact(int.Parse(Id_txtbx.Text));
                 updateList();
                 MessageBox.Show("רשומה נמחקה");
 
@@ -229,6 +229,34 @@ namespace HR_Program
                 MessageBox.Show("מ'ס מזהה לא נמצא");
             }
         }
+
+        private void Person_new_pbtn_Click(object sender, EventArgs e)
+        {
+            Name_txtbx.Text = "";
+            Id_txtbx.Text = "";
+            BirthDate_dtpk.Value = DateTime.Now;
+            Cell_txtbx.Text = "";
+            Tel_txtbx.Text = "";
+            Ethnicity_cmbx.SelectedIndex = -1;
+            Address_txtbx.Text = "";
+            summary_txtbx.Text = "";
+            experience_cmbx.SelectedIndex = -1;
+            Avaiability_cmbx.SelectedIndex = -1;
+            Contact_image_pnl.BackgroundImage = null;
+
+            Adviser_contact1_txtbx.Text = "";
+            Adviser_contact2_txtbx.Text = "";
+            Adviser_contact3_txtbx.Text = "";
+
+            Adviser_name1_txtbx.Text = "";
+            Adviser_name2_txtbx.Text = "";
+            Adviser_name3_txtbx.Text = "";
+
+            Adviser_relation1_txtbx.Text = "";
+            Adviser_relation2_txtbx.Text = "";
+            Adviser_relation3_txtbx.Text = "";
+        }
+
 
         private void Adviser_del1_btn_Click(object sender, EventArgs e)
         {
@@ -250,6 +278,12 @@ namespace HR_Program
             Adviser_name3_txtbx.Text = "";
             Adviser_relation3_txtbx.Text = "";
         }
+
+        private void Save_pbtn_Click(object sender, EventArgs e)
+        {
+            jsonParser.SaveToFile();
+        }
+
 
         // Support Methods
         private void populateInformation(Contact contact)
@@ -419,36 +453,12 @@ namespace HR_Program
 
         private void Person_new_pbtn_MouseLeave(object sender, EventArgs e) => Person_new_pbtn.BackgroundImage = Properties.Resources.person_new_x48;
 
-        private void Person_remove_pbtn_MouseDown(object sender, MouseEventArgs e)
-        {
+        private void Save_pbtn_MouseDown(object sender, MouseEventArgs e) => Save_pbtn.BackgroundImage = Properties.Resources.save_click_x48;
 
-        }
+        private void Save_pbtn_MouseEnter(object sender, EventArgs e) => Save_pbtn.BackgroundImage = Properties.Resources.save_over_x48;
 
-        private void Person_new_pbtn_Click(object sender, EventArgs e)
-        {
-            Name_txtbx.Text = "";
-            Id_txtbx.Text = "";
-            BirthDate_dtpk.Value = DateTime.Now;
-            Cell_txtbx.Text = "";
-            Tel_txtbx.Text = "";
-            Ethnicity_cmbx.SelectedIndex = -1;
-            Address_txtbx.Text = "";
-            summary_txtbx.Text = "";
-            experience_cmbx.SelectedIndex = -1;
-            Avaiability_cmbx.SelectedIndex = -1;
-            Contact_image_pnl.BackgroundImage = null;
+        private void Save_pbtn_MouseLeave(object sender, EventArgs e) => Save_pbtn.BackgroundImage = Properties.Resources.save_x48;
 
-            Adviser_contact1_txtbx.Text = "";
-            Adviser_contact2_txtbx.Text = "";
-            Adviser_contact3_txtbx.Text = "";
 
-            Adviser_name1_txtbx.Text = "";
-            Adviser_name2_txtbx.Text = "";
-            Adviser_name3_txtbx.Text = "";
-
-            Adviser_relation1_txtbx.Text = "";
-            Adviser_relation2_txtbx.Text = "";
-            Adviser_relation3_txtbx.Text = "";
-        }
     }
 }

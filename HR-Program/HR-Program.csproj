@@ -174,5 +174,14 @@
   <ItemGroup>
     <None Include="Resources\person_new_x48.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_click_x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_over_x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save_x48.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -119,7 +119,7 @@ namespace HR_Program
         //   Taken - Looks for the Contact and overrides if with the new_contact object.
         //   Not taken - informs users and finish.
         //
-        public void updateContact(Contact new_contact)
+        public void UpdateContact(Contact new_contact)
         {
             if (idTaken(new_contact.id))
             {
@@ -141,7 +141,7 @@ namespace HR_Program
         //   Taken - Removes Contact by provided id from ContactList and Names list.
         //   Not taken - informs users and finish.
         //
-        public void removeContact(int id)
+        public void RemoveContact(int id)
         {
             if (idTaken(id))
             {
@@ -155,6 +155,23 @@ namespace HR_Program
             {
                 MessageBox.Show("מ'ס מזהה לא נמצא");
             }
+        }
+
+        public void SaveToFile()
+        {
+            ContactBook contactBook = new ContactBook { contactbook = ContactList };
+
+            try
+            {
+                SerializeFromStream(contactBook);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return;
+            }
+
+            MessageBox.Show("הקובץ נשמר בהצלחה");
         }
 
 
@@ -225,6 +242,22 @@ namespace HR_Program
                 return serializer.Deserialize<ContactBook>(jsonTextReader);
             }
         }
+
+        //
+        // Support Method- Deserialize JSON format from a FileStream object.
+        // Returns a 'ContactBook' object.
+        //
+        private void SerializeFromStream(ContactBook contactBook)
+        {
+            var serializer = new JsonSerializer();
+
+            using (var sw = new StreamWriter(file_path))
+            using (JsonTextWriter jtr = new JsonTextWriter(sw))
+            {
+                serializer.Serialize(jtr, contactBook);
+            }
+        }
+
 
         //
         // Support Method- Check whether the provided id already exist.

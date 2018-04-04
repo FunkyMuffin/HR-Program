@@ -86,6 +86,7 @@
             this.Filtering_cmbx = new System.Windows.Forms.ComboBox();
             this.Main_panel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Save_pbtn = new System.Windows.Forms.PictureBox();
             this.Person_remove_pbtn = new System.Windows.Forms.PictureBox();
             this.Person_update_pbtn = new System.Windows.Forms.PictureBox();
             this.Person_add_pbtn = new System.Windows.Forms.PictureBox();
@@ -103,6 +104,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Filter_search_btn)).BeginInit();
             this.Main_panel.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Save_pbtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Person_remove_pbtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Person_update_pbtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Person_add_pbtn)).BeginInit();
@@ -809,6 +811,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(141)))), ((int)(((byte)(178)))));
+            this.panel2.Controls.Add(this.Save_pbtn);
             this.panel2.Controls.Add(this.Person_remove_pbtn);
             this.panel2.Controls.Add(this.Person_update_pbtn);
             this.panel2.Controls.Add(this.Person_add_pbtn);
@@ -818,6 +821,22 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(520, 30);
             this.panel2.TabIndex = 12;
+            // 
+            // Save_pbtn
+            // 
+            this.Save_pbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(141)))), ((int)(((byte)(178)))));
+            this.Save_pbtn.BackgroundImage = global::HR_Program.Properties.Resources.save_x48;
+            this.Save_pbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Save_pbtn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Save_pbtn.Location = new System.Drawing.Point(0, 0);
+            this.Save_pbtn.Name = "Save_pbtn";
+            this.Save_pbtn.Size = new System.Drawing.Size(47, 30);
+            this.Save_pbtn.TabIndex = 16;
+            this.Save_pbtn.TabStop = false;
+            this.Save_pbtn.Click += new System.EventHandler(this.Save_pbtn_Click);
+            this.Save_pbtn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Save_pbtn_MouseDown);
+            this.Save_pbtn.MouseEnter += new System.EventHandler(this.Save_pbtn_MouseEnter);
+            this.Save_pbtn.MouseLeave += new System.EventHandler(this.Save_pbtn_MouseLeave);
             // 
             // Person_remove_pbtn
             // 
@@ -927,6 +946,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Filter_search_btn)).EndInit();
             this.Main_panel.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Save_pbtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Person_remove_pbtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Person_update_pbtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Person_add_pbtn)).EndInit();
@@ -1001,6 +1021,7 @@
         private System.Windows.Forms.TextBox Adviser_relation2_txtbx;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox Person_new_pbtn;
+        private System.Windows.Forms.PictureBox Save_pbtn;
     }
 }
 
